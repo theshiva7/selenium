@@ -23,9 +23,9 @@ public class TestBase {
 	}
 	
 	
-	@AfterSuite
-	public void exit() {
+	 @AfterSuite
+	 public void exit() {
 		TestBase.driver.quit();
 		
-	}
+	}	
 }
