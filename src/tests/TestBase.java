@@ -15,7 +15,7 @@ public class TestBase {
 	@BeforeSuite
 	public void initialize() throws IOException{
 		
-		System.setProperty("webdriver.chrome.driver", "/home/mxicoders/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/home/mxi/chromedriver");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		

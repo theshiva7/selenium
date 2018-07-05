@@ -1,10 +1,12 @@
 package worldex;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
 
@@ -37,19 +39,12 @@ public class Login {
 	{
 		
 		emailbox.sendKeys(mailid);
-		if (mailid=="") 
-		{
-			
-			
-			//implicit wait
-			//driver.manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
-			System.out.println("email is wrong");
-		}
 		
-		
-		
-		
-		}
+		String error_mesg=driver.findElement(By.xpath("//*[@id=\"login_frm\"]/label[1]")).getText();
+		String expected_mesg="This field is required.";
+		Assert.assertEquals(error_mesg, expected_mesg);
+		Assert.assertTrue(error_mesg.contains("This field is required."));
+	}
 	
 	public void setpwd(String pwd) 
 	{

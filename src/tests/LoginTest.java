@@ -15,7 +15,7 @@ public class LoginTest extends TestBase {
 		Login login=PageFactory.initElements(driver, Login.class);
 		
 		login.login_btn();
-		login.setmail("siddharthjadeja15@gmail.com");
+		login.setmail("siddharthjadeja15gmail.com");
 		login.setpwd("Mxi@1234");
 		login.button();
 		
