@@ -5,8 +5,7 @@
     <classes>
       <class name="tests.LoginTest">
         <methods>
-          <include name="init"/>
-          <include name="exit"/>
+          <include name="varify"/>
           <include name="initialize"/>
         </methods>
       </class> <!-- tests.LoginTest -->

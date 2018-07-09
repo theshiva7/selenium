@@ -2,6 +2,8 @@ package worldex;
 
 import org.openqa.selenium.WebElement;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.lang.model.element.Element;
 
 import org.openqa.selenium.By;
@@ -46,10 +48,35 @@ public class Login {
 	
 	//created new method for test and i stucked here.
 	
-	private boolean verifyUserName(String userName) {
-		// TODO Auto-generated method stub
-		return false;
+	
+	String s[] = {"siddharthjadeja, mxi@123", "siddharthjadeja1@gmail.com, Mxi@1234"};
+
+	public void verifyLogin(String id[]) 
+	{
+	for (int i =0; i <id. length ; i++) {
+	String credentials[] = id[i].split(",") ;
+	String userName = credentials[0];
+	String password = credentials[1];
+	 boolean result = verifyUserName1(userName) ;
+	 
+	Assert.assertTrue(result);
+	} 
 	}
+
+	public boolean verifyUserName1(String userName) {
+
+	 driver.findElements(By.xpath("//input[@type='email']")).get(0).sendKeys(userName);
+
+	try {
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
+		return(driver. findElement(By.xpath("//*[@id=\"login_frm\"]/label")).isDisplayed()) ;
+
+	} 
+	catch(Exception e) {
+	 return true;
+	}
+	}
+	
 	public void button() 
 	{
 		login.click();

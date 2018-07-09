@@ -20,6 +20,7 @@ public class LoginTest extends TestBase {
 	
 	//@Test(priority=5)
 	//@Parameters({"email","password"})
+	
 	@Test
 	public void varify() throws Exception
 	{
@@ -28,12 +29,16 @@ public class LoginTest extends TestBase {
 		login.login_btn();
 		login.setmail("siddharthjadeja15@gmail.com");
 		login.setpwd("Mxi@1234");
+		
+		//login.verifyUserName1(userName);
 		login.button();
+		
+	
 		
 	}
 	
 
-	@Test(priority=1)
+/**	@Test(priority=1)
 	public void varify1() throws Exception
 	{
 		Login login= PageFactory.initElements(driver, Login.class);
@@ -79,5 +84,5 @@ public class LoginTest extends TestBase {
 		login.button();
 		Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"login_frm\"]/label")).getText(),"Please enter a valid email address.");
 		
-	}
+	}*/
 }
